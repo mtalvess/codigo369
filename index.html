@@ -3,72 +3,47 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Código 369 - Protocolo 21 Dias</title>
+<title>Código 369</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
 <style>
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #0e0e1a;
-    color: white;
-    text-align: center;
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+font-family:'Poppins',sans-serif;
+background:linear-gradient(135deg,#0f0c29,#302b63,#24243e);
+color:white;
+text-align:center;
 }
-
-.container {
-    padding: 40px 20px;
-    max-width: 800px;
-    margin: auto;
+.container{max-width:900px;margin:auto;padding:40px 20px}
+h1{
+font-size:40px;
+background:linear-gradient(90deg,#c77dff,#e0aaff);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+margin-bottom:20px;
 }
-
-h1 {
-    font-size: 32px;
-    color: #bb86fc;
+.card{
+background:rgba(255,255,255,0.05);
+padding:30px;
+margin:25px 0;
+border-radius:20px;
 }
-
-h2 {
-    color: #9d4edd;
+.btn{
+display:inline-block;
+margin-top:25px;
+padding:18px 40px;
+background:linear-gradient(90deg,#9d4edd,#c77dff);
+border-radius:50px;
+color:white;
+font-weight:600;
+text-decoration:none;
+transition:.3s;
 }
-
-p {
-    font-size: 18px;
-    line-height: 1.6;
+.btn:hover{
+transform:scale(1.08);
+box-shadow:0 0 20px #c77dff;
 }
-
-.btn {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 15px 30px;
-    background: linear-gradient(45deg, #9d4edd, #c77dff);
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 8px;
-    transition: 0.3s;
-}
-
-.btn:hover {
-    transform: scale(1.05);
-}
-
-.box {
-    background: #1a1a2e;
-    padding: 20px;
-    margin: 20px 0;
-    border-radius: 10px;
-}
-
-.roleta {
-    margin: 30px auto;
-    padding: 20px;
-    background: #240046;
-    border-radius: 10px;
-}
-
-footer {
-    margin-top: 40px;
-    font-size: 14px;
-    opacity: 0.6;
-}
+footer{margin-top:40px;font-size:14px;opacity:.6}
 </style>
 </head>
 
@@ -77,38 +52,27 @@ footer {
 <div class="container">
 
 <h1>🌌 CÓDIGO 369</h1>
-<h2>O Protocolo de Manifestação em 21 Dias</h2>
-
 <p>Transforme sua energia em 21 dias; se não funcionar devolvemos seu dinheiro.</p>
 
-<a href="#oferta" class="btn">Quero transformar minha realidade</a>
-
-<div class="box">
-<h2>O que você vai aprender</h2>
-<p>✔ Eliminar bloqueios mentais<br>
+<div class="card">
+<h2>O Que Você Vai Aprender</h2>
+<p>
+✔ Eliminar bloqueios mentais<br>
 ✔ Reprogramar crenças limitantes<br>
 ✔ Aplicar corretamente a técnica 3-6-9<br>
-✔ Alinhar emoção e ação<br>
-✔ Criar resultados reais</p>
+✔ Manifestar com ação estratégica
+</p>
 </div>
 
-<div class="box">
-<h2>Como funciona</h2>
-<p><strong>Fase 1:</strong> Limpeza Mental<br>
-<strong>Fase 2:</strong> Programação Emocional<br>
-<strong>Fase 3:</strong> Manifestação com Ação</p>
-</div>
-
-<div class="roleta">
-<h2>🎡 Gire para ganhar desconto</h2>
-<p id="resultado">Clique abaixo e descubra sua oferta especial.</p>
-<button class="btn" onclick="girar()">Girar Roleta</button>
-</div>
-
-<div id="oferta" class="box">
+<div class="card">
 <h2>🔥 Oferta Especial</h2>
-<p>De R$67 por apenas <strong>R$19,90</strong></p>
-<a href="LINK_DA_KIWIFY_AQUI" class="btn">Comprar Agora</a>
+<p style="text-decoration:line-through;opacity:.6">De R$67</p>
+<p style="font-size:32px;font-weight:700;color:#c77dff">Por apenas R$19,90</p>
+
+<a href="COLE_AQUI_SEU_LINK_DA_KIWIFY" target="_blank" class="btn">
+Quero Começar Agora
+</a>
+
 </div>
 
 <footer>
@@ -116,19 +80,6 @@ Garantia de 7 dias ou seu dinheiro de volta.
 </footer>
 
 </div>
-
-<script>
-function girar() {
-    let premios = [
-        "Você ganhou 10% OFF!",
-        "Você ganhou 25% OFF!",
-        "Você ganhou 50% OFF!",
-        "🔥 Você ganhou 70% OFF por 10 minutos!"
-    ];
-    let sorteio = premios[Math.floor(Math.random() * premios.length)];
-    document.getElementById("resultado").innerHTML = sorteio;
-}
-</script>
 
 </body>
 </html>
