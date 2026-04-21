@@ -1,37 +1,237 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Código 369</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+body{
+margin:0;
+background:radial-gradient(circle at top,#0f0f0f,#000);
+color:#eee;
+font-family:'Inter',sans-serif;
+text-align:center;
+-webkit-font-smoothing:antialiased;
+}
+
+section{
+padding:120px 20px;
+max-width:1000px;
+margin:auto;
+}
+
+h1{
+font-family:'Cinzel',serif;
+font-size:70px;
+letter-spacing:4px;
+margin-bottom:20px;
+background:linear-gradient(45deg,#f5d77a,#d4af37,#b8860b);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+text-shadow:0 0 30px rgba(212,175,55,0.4);
+}
+
+.sub{
+font-size:20px;
+color:#aaa;
+max-width:600px;
+margin:30px auto 80px;
+line-height:1.6;
+font-weight:300;
+}
+
+.botao{
+display:inline-block;
+padding:16px 50px;
+border-radius:60px;
+background:linear-gradient(45deg,#f5d77a,#d4af37);
+color:#000;
+font-weight:600;
+text-decoration:none;
+transition:0.4s;
+letter-spacing:1px;
+}
+
+.botao:hover{
+transform:scale(1.06);
+box-shadow:0 15px 40px rgba(212,175,55,0.5);
+}
+
+.roleta-wrapper{
+margin-top:60px;
+perspective:1500px;
+}
+
+.roleta-container{
+position:relative;
+width:340px;
+height:340px;
+margin:40px auto;
+}
+
+.roleta{
+width:100%;
+height:100%;
+border-radius:50%;
+background:conic-gradient(
+#111 0deg 45deg,
+#d4af37 45deg 90deg,
+#111 90deg 135deg,
+#d4af37 135deg 180deg,
+#111 180deg 225deg,
+#d4af37 225deg 270deg,
+#111 270deg 315deg,
+#d4af37 315deg 360deg
+);
+border:12px solid #d4af37;
+box-shadow:
+inset 0 0 60px rgba(0,0,0,0.9),
+0 25px 80px rgba(0,0,0,0.7);
+transition:transform 4s cubic-bezier(.19,1,.22,1);
+transform-style:preserve-3d;
+}
+
+.roleta::after{
+content:"";
+position:absolute;
+width:90px;
+height:90px;
+background:radial-gradient(circle,#d4af37,#000);
+border-radius:50%;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+box-shadow:0 0 40px rgba(212,175,55,0.7);
+}
+
+.label{
+position:absolute;
+left:50%;
+top:50%;
+transform-origin:center;
+font-size:14px;
+font-weight:600;
+color:#000;
+background:#d4af37;
+padding:6px 14px;
+border-radius:30px;
+}
+
+.ponteiro{
+position:absolute;
+left:-10px;
+top:150px;
+width:0;
+height:0;
+border-top:18px solid transparent;
+border-bottom:18px solid transparent;
+border-left:40px solid #d4af37;
+filter:drop-shadow(0 0 12px rgba(212,175,55,0.9));
+z-index:10;
+}
+
+.preco-area{
+margin-top:90px;
+display:none;
+animation:fadeUp 1s ease forwards;
+}
+
+.preco-antigo{
+text-decoration:line-through;
+color:#777;
+margin-bottom:10px;
+}
+
+.preco{
+font-size:48px;
+color:#f5d77a;
+font-family:'Cinzel',serif;
+letter-spacing:2px;
+margin-bottom:40px;
+}
+
+footer{
+padding:50px;
+color:#555;
+font-size:14px;
+}
+
+@keyframes fadeUp{
+from{opacity:0; transform:translateY(40px);}
+to{opacity:1; transform:translateY(0);}
+}
+</style>
+</head>
+
+<body>
+
+<section>
+
+<h1>CÓDIGO 369</h1>
+
+<p class="sub">
+Protocolo estruturado de 21 dias para alinhar intenção, emoção e ação utilizando a técnica 3-6-9.
+</p>
+
+<div class="roleta-wrapper">
+<div class="roleta-container">
+<div class="ponteiro"></div>
+
+<div class="roleta" id="roleta">
+<div class="label" style="transform:rotate(22.5deg) translateY(-130px);">5%</div>
+<div class="label" style="transform:rotate(67.5deg) translateY(-130px);">12%</div>
+<div class="label" style="transform:rotate(112.5deg) translateY(-130px);">18%</div>
+<div class="label" style="transform:rotate(157.5deg) translateY(-130px);">10%</div>
+<div class="label" style="transform:rotate(202.5deg) translateY(-130px);">25%</div>
+<div class="label" style="transform:rotate(247.5deg) translateY(-130px);">7%</div>
+<div class="label" style="transform:rotate(292.5deg) translateY(-130px);">20%</div>
+<div class="label" style="transform:rotate(337.5deg) translateY(-130px);">15%</div>
+</div>
+
+</div>
+
+<a class="botao" onclick="girar()">DESBLOQUEAR OFERTA</a>
+
+<div class="preco-area" id="oferta">
+<p class="preco-antigo">De R$29,90</p>
+<p class="preco">R$ 15,00</p>
+<a href="SEU_LINK_DA_KIWIFY_AQUI" class="botao">QUERO ACESSAR AGORA</a>
+</div>
+
+</div>
+
+</section>
+
+<footer>
+© 2026 Código 369
+</footer>
+
 <script>
-let girou = false;
+let girou=false;
 
-function girar() {
-  if (girou) return;
-  girou = true;
+function girar(){
+if(girou) return;
+girou=true;
 
-  const roleta = document.getElementById("roleta");
-  const oferta = document.getElementById("oferta");
+let roleta=document.getElementById("roleta");
+let oferta=document.getElementById("oferta");
 
-  /*
-  Temos 8 fatias.
-  Cada fatia = 360 / 8 = 45 graus.
-  A fatia do 15% é a 4ª.
-  
-  Centro da 4ª fatia:
-  (45 * 3) + 22.5 = 157.5 graus
-  
-  Como o ponteiro está à esquerda (180°),
-  precisamos alinhar corretamente.
-  */
+/* sempre parar no 10% */
+const anguloFatia = 157.5;
+const anguloPonteiro = 180;
+const ajuste = anguloPonteiro - anguloFatia;
+const voltas = 1440;
 
-  const anguloFatia15 = 157.5;
-  const anguloPonteiro = 180;
+roleta.style.transform="rotate("+(voltas+ajuste)+"deg)";
 
-  const ajuste = anguloPonteiro - anguloFatia15;
-
-  const voltas = 1440; // 4 voltas completas para efeito suave
-  const anguloFinal = voltas + ajuste;
-
-  roleta.style.transform = "rotate(" + anguloFinal + "deg)";
-
-  setTimeout(() => {
-    oferta.style.display = "block";
-  }, 4000);
+setTimeout(()=>{
+oferta.style.display="block";
+},4000);
 }
 </script>
+
+</body>
+</html>
