@@ -3,17 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Código 369</title>
+<title>Método Código 369</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 
 body{
-background:#000;
+background:#0f0f0f;
 color:#fff;
-font-family:'Poppins',sans-serif;
+font-family:'Inter',sans-serif;
 text-align:center;
 }
 
@@ -24,40 +24,39 @@ padding:50px 20px;
 }
 
 h1{
-font-family:'Cinzel',serif;
-font-size:48px;
-color:#d4af37;
-letter-spacing:3px;
-margin-bottom:20px;
-text-shadow:0 0 15px rgba(212,175,55,0.6);
+font-family:'Montserrat',sans-serif;
+font-size:36px;
+margin-bottom:10px;
 }
 
 .subtitle{
-font-size:20px;
+opacity:.7;
 margin-bottom:40px;
-opacity:.8;
+}
+
+.section{
+margin:60px 0;
 }
 
 .roleta-container{
-margin:40px auto;
 position:relative;
 width:320px;
 height:320px;
+margin:40px auto;
 }
 
 .roleta{
 width:100%;
 height:100%;
 border-radius:50%;
-border:10px solid #d4af37;
+border:8px solid #caa94d;
 background:conic-gradient(
 #111 0deg 90deg,
-#d4af37 90deg 180deg,
+#caa94d 90deg 180deg,
 #111 180deg 270deg,
-#d4af37 270deg 360deg
+#caa94d 270deg 360deg
 );
 transition:transform 4s cubic-bezier(.17,.67,.83,.67);
-box-shadow:0 0 40px rgba(212,175,55,.4);
 }
 
 .ponteiro{
@@ -67,64 +66,64 @@ left:50%;
 transform:translateX(-50%);
 width:0;
 height:0;
-border-left:18px solid transparent;
-border-right:18px solid transparent;
-border-bottom:35px solid #d4af37;
+border-left:15px solid transparent;
+border-right:15px solid transparent;
+border-bottom:30px solid #caa94d;
 }
 
 .btn{
-display:inline-block;
-margin-top:30px;
-padding:18px 45px;
-background:linear-gradient(90deg,#b8860b,#ffd700);
-color:#000;
-font-weight:700;
+margin-top:20px;
+padding:14px 35px;
+background:#caa94d;
 border:none;
-border-radius:50px;
+border-radius:25px;
+font-weight:600;
 cursor:pointer;
-font-size:16px;
+color:#000;
 transition:.3s;
 }
 
 .btn:hover{
-transform:scale(1.08);
-box-shadow:0 0 25px rgba(255,215,0,.7);
+transform:scale(1.05);
+box-shadow:0 0 15px rgba(202,169,77,.6);
 }
 
-#resultado{
-margin-top:25px;
-font-size:22px;
-font-weight:600;
-color:#ffd700;
+.card{
+background:#1a1a1a;
+padding:25px;
+border-radius:15px;
+margin:15px 0;
 }
 
-#oferta{
-display:none;
-margin-top:40px;
+.depoimentos{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+margin-top:30px;
 }
 
 .price-old{
 text-decoration:line-through;
-opacity:.5;
+opacity:.4;
 }
 
 .price-new{
-font-size:32px;
-color:#ffd700;
+font-size:28px;
 font-weight:700;
+color:#caa94d;
 margin:10px 0;
 }
 
-.countdown{
-margin-top:15px;
-color:#ffd700;
-font-weight:600;
+.security{
+margin-top:40px;
+font-size:14px;
+opacity:.6;
 }
 
 footer{
 margin-top:60px;
-font-size:14px;
-opacity:.5;
+font-size:13px;
+opacity:.4;
 }
 </style>
 </head>
@@ -133,37 +132,67 @@ opacity:.5;
 
 <div class="container">
 
-<h1>CÓDIGO 369</h1>
-<p class="subtitle">
-Gire a roleta e desbloqueie sua condição exclusiva.
-</p>
+<h1>Método Código 369</h1>
+<p class="subtitle">Desbloqueie seu desconto exclusivo e comece hoje.</p>
 
 <div class="roleta-container">
 <div class="ponteiro"></div>
 <div class="roleta" id="roleta"></div>
 </div>
 
-<button class="btn" onclick="girar()">GIRAR ROLETA</button>
+<button class="btn" onclick="girar()">Girar roleta</button>
 
 <div id="resultado"></div>
 
-<div id="oferta">
-<h2 style="font-family:'Cinzel',serif;color:#d4af37;margin-top:20px;">
-🔥 15% OFF LIBERADO
-</h2>
-
-<p class="price-old">De R$67,00</p>
-<p class="price-new">Por R$56,95</p>
+<div id="oferta" style="display:none" class="section">
+<h2>Desconto aplicado</h2>
+<p class="price-old">De R$27,00</p>
+<p class="price-new">Por apenas R$15,00</p>
 
 <a href="COLE_AQUI_SEU_LINK_DA_KIWIFY" target="_blank">
-<button class="btn">QUERO GARANTIR AGORA</button>
+<button class="btn">Comprar agora</button>
 </a>
+</div>
 
-<div class="countdown" id="timer"></div>
+<div class="section">
+<h2>O que você vai aprender</h2>
+<div class="card">
+✔ Identificar bloqueios mentais<br>
+✔ Reprogramar crenças limitantes<br>
+✔ Aplicar corretamente a técnica 3-6-9<br>
+✔ Criar alinhamento emocional diário
+</div>
+</div>
+
+<div class="section">
+<h2>O que alunos relatam</h2>
+
+<div class="depoimentos">
+<div class="card">
+“Comecei a aplicar o método e senti mais clareza e foco em poucos dias.”
+<br><strong>— Mariana S.</strong>
+</div>
+
+<div class="card">
+“Gostei porque é prático e direto. Não é só teoria.”
+<br><strong>— Rafael L.</strong>
+</div>
+
+<div class="card">
+“Os exercícios ajudaram muito na minha organização mental.”
+<br><strong>— Juliana M.</strong>
+</div>
+</div>
+</div>
+
+<div class="security">
+🔒 Pagamento 100% seguro<br>
+💳 Pix e Cartão<br>
+📥 Acesso imediato após confirmação
 </div>
 
 <footer>
-Garantia de 7 dias ou seu dinheiro de volta.
+Garantia de 7 dias • Produto digital
 </footer>
 
 </div>
@@ -179,29 +208,13 @@ let roleta=document.getElementById("roleta");
 let resultado=document.getElementById("resultado");
 let oferta=document.getElementById("oferta");
 
-let angulo=1440 + 45; 
-roleta.style.transform="rotate("+angulo+"deg)";
+let anguloFinal = 1440 + 135;
+roleta.style.transform="rotate("+anguloFinal+"deg)";
 
 setTimeout(()=>{
-resultado.innerHTML="✨ Você desbloqueou 15% OFF exclusivo!";
+resultado.innerHTML="15% OFF desbloqueado com sucesso.";
 oferta.style.display="block";
-iniciarTimer();
 },4000);
-}
-
-function iniciarTimer(){
-let tempo=600;
-let timer=setInterval(function(){
-let min=Math.floor(tempo/60);
-let sec=tempo%60;
-document.getElementById("timer").innerHTML=
-"Oferta expira em: "+min+"m "+sec+"s";
-tempo--;
-if(tempo<0){
-clearInterval(timer);
-document.getElementById("timer").innerHTML="Oferta encerrada.";
-}
-},1000);
 }
 </script>
 
