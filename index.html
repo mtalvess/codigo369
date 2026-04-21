@@ -3,199 +3,200 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Método Código 369</title>
+<title>Código 369 - Protocolo Oficial</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-
 body{
-background:#0f0f0f;
+margin:0;
+font-family:'Montserrat',sans-serif;
+background:#000;
 color:#fff;
-font-family:'Inter',sans-serif;
 text-align:center;
 }
 
-.container{
-max-width:1000px;
-margin:auto;
-padding:50px 20px;
-}
-
 h1{
-font-family:'Montserrat',sans-serif;
-font-size:36px;
-margin-bottom:10px;
+font-family:'Cinzel',serif;
+font-size:42px;
+color:#d4af37;
+margin-top:40px;
+letter-spacing:2px;
 }
 
-.subtitle{
-opacity:.7;
-margin-bottom:40px;
+.sub{
+font-size:18px;
+color:#ccc;
+margin:20px auto;
+max-width:600px;
 }
 
-.section{
-margin:60px 0;
+.preco-antigo{
+text-decoration:line-through;
+color:#777;
+font-size:18px;
+}
+
+.preco{
+font-size:42px;
+color:#d4af37;
+font-weight:700;
+margin:10px 0;
+}
+
+.botao{
+display:inline-block;
+padding:15px 35px;
+background:linear-gradient(45deg,#d4af37,#b8860b);
+color:#000;
+font-weight:700;
+border-radius:8px;
+text-decoration:none;
+margin-top:20px;
+transition:0.3s;
+}
+
+.botao:hover{
+transform:scale(1.05);
+box-shadow:0 0 20px #d4af37;
+}
+
+.roleta-area{
+margin-top:60px;
 }
 
 .roleta-container{
 position:relative;
-width:320px;
-height:320px;
+width:360px;
+height:360px;
 margin:40px auto;
+perspective:1000px;
 }
 
 .roleta{
 width:100%;
 height:100%;
 border-radius:50%;
-border:8px solid #caa94d;
+border:12px solid #d4af37;
 background:conic-gradient(
-#111 0deg 90deg,
-#caa94d 90deg 180deg,
-#111 180deg 270deg,
-#caa94d 270deg 360deg
+#111 0deg 45deg,
+#d4af37 45deg 90deg,
+#1a1a1a 90deg 135deg,
+#d4af37 135deg 180deg,
+#111 180deg 225deg,
+#d4af37 225deg 270deg,
+#1a1a1a 270deg 315deg,
+#d4af37 315deg 360deg
 );
+box-shadow:
+inset 0 0 40px rgba(0,0,0,0.8),
+0 0 30px rgba(212,175,55,0.6);
+transform-style:preserve-3d;
 transition:transform 4s cubic-bezier(.17,.67,.83,.67);
+position:relative;
+}
+
+.roleta::after{
+content:"";
+position:absolute;
+width:100px;
+height:100px;
+background:radial-gradient(circle,#d4af37,#000);
+border-radius:50%;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+box-shadow:0 0 20px #d4af37;
+}
+
+.label{
+position:absolute;
+left:50%;
+top:50%;
+transform-origin:center;
+font-weight:700;
+font-size:14px;
+color:#000;
+background:#d4af37;
+padding:6px 12px;
+border-radius:20px;
 }
 
 .ponteiro{
 position:absolute;
-top:-18px;
-left:50%;
-transform:translateX(-50%);
+left:-5px;
+top:160px;
 width:0;
 height:0;
-border-left:15px solid transparent;
-border-right:15px solid transparent;
-border-bottom:30px solid #caa94d;
+border-top:18px solid transparent;
+border-bottom:18px solid transparent;
+border-left:35px solid #d4af37;
+z-index:10;
+filter:drop-shadow(0 0 5px #d4af37);
 }
 
-.btn{
+#resultado{
+font-size:20px;
 margin-top:20px;
-padding:14px 35px;
-background:#caa94d;
-border:none;
-border-radius:25px;
+color:#d4af37;
 font-weight:600;
-cursor:pointer;
-color:#000;
-transition:.3s;
 }
 
-.btn:hover{
-transform:scale(1.05);
-box-shadow:0 0 15px rgba(202,169,77,.6);
-}
-
-.card{
-background:#1a1a1a;
-padding:25px;
-border-radius:15px;
-margin:15px 0;
-}
-
-.depoimentos{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
+#oferta{
+display:none;
 margin-top:30px;
 }
 
-.price-old{
-text-decoration:line-through;
-opacity:.4;
-}
-
-.price-new{
-font-size:28px;
-font-weight:700;
-color:#caa94d;
-margin:10px 0;
-}
-
-.security{
-margin-top:40px;
-font-size:14px;
-opacity:.6;
-}
-
 footer{
-margin-top:60px;
-font-size:13px;
-opacity:.4;
+margin:60px 0 20px;
+color:#777;
+font-size:14px;
 }
 </style>
 </head>
 
 <body>
 
-<div class="container">
+<h1>CÓDIGO 369</h1>
 
-<h1>Método Código 369</h1>
-<p class="subtitle">Desbloqueie seu desconto exclusivo e comece hoje.</p>
+<p class="sub">
+Um protocolo prático de 21 dias para alinhar mente, emoção e ação usando a técnica 3-6-9.
+</p>
+
+<div class="roleta-area">
+<h2 style="color:#d4af37;">Gire a roleta e desbloqueie seu desconto</h2>
 
 <div class="roleta-container">
 <div class="ponteiro"></div>
-<div class="roleta" id="roleta"></div>
+<div class="roleta" id="roleta">
+
+<div class="label" style="transform:rotate(22.5deg) translateY(-130px);">5%</div>
+<div class="label" style="transform:rotate(67.5deg) translateY(-130px);">10%</div>
+<div class="label" style="transform:rotate(112.5deg) translateY(-130px);">20%</div>
+<div class="label" style="transform:rotate(157.5deg) translateY(-130px);">15%</div>
+<div class="label" style="transform:rotate(202.5deg) translateY(-130px);">30%</div>
+<div class="label" style="transform:rotate(247.5deg) translateY(-130px);">7%</div>
+<div class="label" style="transform:rotate(292.5deg) translateY(-130px);">25%</div>
+<div class="label" style="transform:rotate(337.5deg) translateY(-130px);">12%</div>
+
+</div>
 </div>
 
-<button class="btn" onclick="girar()">Girar roleta</button>
+<button class="botao" onclick="girar()">GIRAR AGORA</button>
 
 <div id="resultado"></div>
 
-<div id="oferta" style="display:none" class="section">
-<h2>Desconto aplicado</h2>
-<p class="price-old">De R$27,00</p>
-<p class="price-new">Por apenas R$15,00</p>
-
-<a href="COLE_AQUI_SEU_LINK_DA_KIWIFY" target="_blank">
-<button class="btn">Comprar agora</button>
-</a>
+<div id="oferta">
+<p class="preco-antigo">De R$29,90</p>
+<p class="preco">Por apenas R$15,00</p>
+<a href="SEU_LINK_DA_KIWIFY_AQUI" class="botao">QUERO MEU ACESSO AGORA</a>
 </div>
 
-<div class="section">
-<h2>O que você vai aprender</h2>
-<div class="card">
-✔ Identificar bloqueios mentais<br>
-✔ Reprogramar crenças limitantes<br>
-✔ Aplicar corretamente a técnica 3-6-9<br>
-✔ Criar alinhamento emocional diário
-</div>
-</div>
-
-<div class="section">
-<h2>O que alunos relatam</h2>
-
-<div class="depoimentos">
-<div class="card">
-“Comecei a aplicar o método e senti mais clareza e foco em poucos dias.”
-<br><strong>— Mariana S.</strong>
-</div>
-
-<div class="card">
-“Gostei porque é prático e direto. Não é só teoria.”
-<br><strong>— Rafael L.</strong>
-</div>
-
-<div class="card">
-“Os exercícios ajudaram muito na minha organização mental.”
-<br><strong>— Juliana M.</strong>
-</div>
-</div>
-</div>
-
-<div class="security">
-🔒 Pagamento 100% seguro<br>
-💳 Pix e Cartão<br>
-📥 Acesso imediato após confirmação
 </div>
 
 <footer>
-Garantia de 7 dias • Produto digital
+© 2026 Código 369 • Todos os direitos reservados
 </footer>
-
-</div>
 
 <script>
 let girou=false;
@@ -208,11 +209,13 @@ let roleta=document.getElementById("roleta");
 let resultado=document.getElementById("resultado");
 let oferta=document.getElementById("oferta");
 
-let anguloFinal = 1440 + 135;
+/* sempre para no 15% */
+let anguloFinal=1440+(360-157.5);
+
 roleta.style.transform="rotate("+anguloFinal+"deg)";
 
 setTimeout(()=>{
-resultado.innerHTML="15% OFF desbloqueado com sucesso.";
+resultado.innerHTML="✨ Você desbloqueou 15% OFF exclusivo!";
 oferta.style.display="block";
 },4000);
 }
