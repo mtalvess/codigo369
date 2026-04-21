@@ -1,225 +1,37 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Código 369 - Protocolo Oficial</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
-
-<style>
-body{
-margin:0;
-font-family:'Montserrat',sans-serif;
-background:#000;
-color:#fff;
-text-align:center;
-}
-
-h1{
-font-family:'Cinzel',serif;
-font-size:42px;
-color:#d4af37;
-margin-top:40px;
-letter-spacing:2px;
-}
-
-.sub{
-font-size:18px;
-color:#ccc;
-margin:20px auto;
-max-width:600px;
-}
-
-.preco-antigo{
-text-decoration:line-through;
-color:#777;
-font-size:18px;
-}
-
-.preco{
-font-size:42px;
-color:#d4af37;
-font-weight:700;
-margin:10px 0;
-}
-
-.botao{
-display:inline-block;
-padding:15px 35px;
-background:linear-gradient(45deg,#d4af37,#b8860b);
-color:#000;
-font-weight:700;
-border-radius:8px;
-text-decoration:none;
-margin-top:20px;
-transition:0.3s;
-}
-
-.botao:hover{
-transform:scale(1.05);
-box-shadow:0 0 20px #d4af37;
-}
-
-.roleta-area{
-margin-top:60px;
-}
-
-.roleta-container{
-position:relative;
-width:360px;
-height:360px;
-margin:40px auto;
-perspective:1000px;
-}
-
-.roleta{
-width:100%;
-height:100%;
-border-radius:50%;
-border:12px solid #d4af37;
-background:conic-gradient(
-#111 0deg 45deg,
-#d4af37 45deg 90deg,
-#1a1a1a 90deg 135deg,
-#d4af37 135deg 180deg,
-#111 180deg 225deg,
-#d4af37 225deg 270deg,
-#1a1a1a 270deg 315deg,
-#d4af37 315deg 360deg
-);
-box-shadow:
-inset 0 0 40px rgba(0,0,0,0.8),
-0 0 30px rgba(212,175,55,0.6);
-transform-style:preserve-3d;
-transition:transform 4s cubic-bezier(.17,.67,.83,.67);
-position:relative;
-}
-
-.roleta::after{
-content:"";
-position:absolute;
-width:100px;
-height:100px;
-background:radial-gradient(circle,#d4af37,#000);
-border-radius:50%;
-top:50%;
-left:50%;
-transform:translate(-50%,-50%);
-box-shadow:0 0 20px #d4af37;
-}
-
-.label{
-position:absolute;
-left:50%;
-top:50%;
-transform-origin:center;
-font-weight:700;
-font-size:14px;
-color:#000;
-background:#d4af37;
-padding:6px 12px;
-border-radius:20px;
-}
-
-.ponteiro{
-position:absolute;
-left:-5px;
-top:160px;
-width:0;
-height:0;
-border-top:18px solid transparent;
-border-bottom:18px solid transparent;
-border-left:35px solid #d4af37;
-z-index:10;
-filter:drop-shadow(0 0 5px #d4af37);
-}
-
-#resultado{
-font-size:20px;
-margin-top:20px;
-color:#d4af37;
-font-weight:600;
-}
-
-#oferta{
-display:none;
-margin-top:30px;
-}
-
-footer{
-margin:60px 0 20px;
-color:#777;
-font-size:14px;
-}
-</style>
-</head>
-
-<body>
-
-<h1>CÓDIGO 369</h1>
-
-<p class="sub">
-Um protocolo prático de 21 dias para alinhar mente, emoção e ação usando a técnica 3-6-9.
-</p>
-
-<div class="roleta-area">
-<h2 style="color:#d4af37;">Gire a roleta e desbloqueie seu desconto</h2>
-
-<div class="roleta-container">
-<div class="ponteiro"></div>
-<div class="roleta" id="roleta">
-
-<div class="label" style="transform:rotate(22.5deg) translateY(-130px);">5%</div>
-<div class="label" style="transform:rotate(67.5deg) translateY(-130px);">10%</div>
-<div class="label" style="transform:rotate(112.5deg) translateY(-130px);">20%</div>
-<div class="label" style="transform:rotate(157.5deg) translateY(-130px);">15%</div>
-<div class="label" style="transform:rotate(202.5deg) translateY(-130px);">30%</div>
-<div class="label" style="transform:rotate(247.5deg) translateY(-130px);">7%</div>
-<div class="label" style="transform:rotate(292.5deg) translateY(-130px);">25%</div>
-<div class="label" style="transform:rotate(337.5deg) translateY(-130px);">12%</div>
-
-</div>
-</div>
-
-<button class="botao" onclick="girar()">GIRAR AGORA</button>
-
-<div id="resultado"></div>
-
-<div id="oferta">
-<p class="preco-antigo">De R$29,90</p>
-<p class="preco">Por apenas R$15,00</p>
-<a href="SEU_LINK_DA_KIWIFY_AQUI" class="botao">QUERO MEU ACESSO AGORA</a>
-</div>
-
-</div>
-
-<footer>
-© 2026 Código 369 • Todos os direitos reservados
-</footer>
-
 <script>
-let girou=false;
+let girou = false;
 
-function girar(){
-if(girou) return;
-girou=true;
+function girar() {
+  if (girou) return;
+  girou = true;
 
-let roleta=document.getElementById("roleta");
-let resultado=document.getElementById("resultado");
-let oferta=document.getElementById("oferta");
+  const roleta = document.getElementById("roleta");
+  const oferta = document.getElementById("oferta");
 
-/* sempre para no 15% */
-let anguloFinal=1440+(360-157.5);
+  /*
+  Temos 8 fatias.
+  Cada fatia = 360 / 8 = 45 graus.
+  A fatia do 15% é a 4ª.
+  
+  Centro da 4ª fatia:
+  (45 * 3) + 22.5 = 157.5 graus
+  
+  Como o ponteiro está à esquerda (180°),
+  precisamos alinhar corretamente.
+  */
 
-roleta.style.transform="rotate("+anguloFinal+"deg)";
+  const anguloFatia15 = 157.5;
+  const anguloPonteiro = 180;
 
-setTimeout(()=>{
-resultado.innerHTML="✨ Você desbloqueou 15% OFF exclusivo!";
-oferta.style.display="block";
-},4000);
+  const ajuste = anguloPonteiro - anguloFatia15;
+
+  const voltas = 1440; // 4 voltas completas para efeito suave
+  const anguloFinal = voltas + ajuste;
+
+  roleta.style.transform = "rotate(" + anguloFinal + "deg)";
+
+  setTimeout(() => {
+    oferta.style.display = "block";
+  }, 4000);
 }
 </script>
-
-</body>
-</html>
