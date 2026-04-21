@@ -14,7 +14,9 @@ background:linear-gradient(135deg,#0f0c29,#302b63,#24243e);
 color:white;
 text-align:center;
 }
+
 .container{max-width:900px;margin:auto;padding:40px 20px}
+
 h1{
 font-size:40px;
 background:linear-gradient(90deg,#c77dff,#e0aaff);
@@ -22,28 +24,62 @@ background:linear-gradient(90deg,#c77dff,#e0aaff);
 -webkit-text-fill-color:transparent;
 margin-bottom:20px;
 }
-.card{
-background:rgba(255,255,255,0.05);
-padding:30px;
-margin:25px 0;
-border-radius:20px;
+
+.roleta-container{
+margin:40px auto;
+position:relative;
+width:300px;
+height:300px;
 }
+
+.roleta{
+width:100%;
+height:100%;
+border-radius:50%;
+border:8px solid #fff;
+background:conic-gradient(
+#9d4edd 0deg 90deg,
+#c77dff 90deg 180deg,
+#7b2cbf 180deg 270deg,
+#5a189a 270deg 360deg
+);
+transition:transform 4s ease-out;
+}
+
+.ponteiro{
+position:absolute;
+top:-15px;
+left:50%;
+transform:translateX(-50%);
+width:0;
+height:0;
+border-left:15px solid transparent;
+border-right:15px solid transparent;
+border-bottom:30px solid #fff;
+}
+
 .btn{
 display:inline-block;
 margin-top:25px;
-padding:18px 40px;
+padding:15px 35px;
 background:linear-gradient(90deg,#9d4edd,#c77dff);
 border-radius:50px;
 color:white;
 font-weight:600;
 text-decoration:none;
-transition:.3s;
+cursor:pointer;
+border:none;
 }
-.btn:hover{
-transform:scale(1.08);
-box-shadow:0 0 20px #c77dff;
-}
-footer{margin-top:40px;font-size:14px;opacity:.6}
+
+.btn:hover{transform:scale(1.05)}
+
+#resultado{margin-top:20px;font-size:18px;font-weight:600}
+
+#oferta{display:none;margin-top:30px}
+
+.countdown{margin-top:10px;color:#ffb3ff;font-weight:600}
+
+footer{margin-top:50px;font-size:14px;opacity:.6}
 </style>
 </head>
 
@@ -52,27 +88,27 @@ footer{margin-top:40px;font-size:14px;opacity:.6}
 <div class="container">
 
 <h1>🌌 CÓDIGO 369</h1>
-<p>Transforme sua energia em 21 dias; se não funcionar devolvemos seu dinheiro.</p>
+<p>Gire a roleta e desbloqueie sua oferta especial.</p>
 
-<div class="card">
-<h2>O Que Você Vai Aprender</h2>
-<p>
-✔ Eliminar bloqueios mentais<br>
-✔ Reprogramar crenças limitantes<br>
-✔ Aplicar corretamente a técnica 3-6-9<br>
-✔ Manifestar com ação estratégica
-</p>
+<div class="roleta-container">
+<div class="ponteiro"></div>
+<div class="roleta" id="roleta"></div>
 </div>
 
-<div class="card">
-<h2>🔥 Oferta Especial</h2>
+<button class="btn" onclick="girar()">Girar Roleta</button>
+
+<div id="resultado"></div>
+
+<div id="oferta">
+<h2>🔥 Oferta Especial Liberada</h2>
 <p style="text-decoration:line-through;opacity:.6">De R$67</p>
-<p style="font-size:32px;font-weight:700;color:#c77dff">Por apenas R$19,90</p>
+<p style="font-size:28px;color:#c77dff;font-weight:700">Por apenas R$19,90</p>
 
 <a href="COLE_AQUI_SEU_LINK_DA_KIWIFY" target="_blank" class="btn">
-Quero Começar Agora
+Comprar Agora
 </a>
 
+<div class="countdown" id="timer"></div>
 </div>
 
 <footer>
@@ -80,6 +116,50 @@ Garantia de 7 dias ou seu dinheiro de volta.
 </footer>
 
 </div>
+
+<script>
+let girou=false;
+
+function girar(){
+if(girou) return;
+girou=true;
+
+let roleta=document.getElementById("roleta");
+let resultado=document.getElementById("resultado");
+let oferta=document.getElementById("oferta");
+
+let angulo=Math.floor(Math.random()*360)+1440;
+roleta.style.transform="rotate("+angulo+"deg)";
+
+setTimeout(()=>{
+let premios=[
+"Você ganhou 10% OFF!",
+"Você ganhou 25% OFF!",
+"🔥 Você ganhou 50% OFF!",
+"✨ Você desbloqueou 70% OFF por 10 minutos!"
+];
+let premio=premios[Math.floor(Math.random()*premios.length)];
+resultado.innerHTML=premio;
+oferta.style.display="block";
+iniciarTimer();
+},4000);
+}
+
+function iniciarTimer(){
+let tempo=600;
+let timer=setInterval(function(){
+let min=Math.floor(tempo/60);
+let sec=tempo%60;
+document.getElementById("timer").innerHTML=
+"Oferta expira em: "+min+"m "+sec+"s";
+tempo--;
+if(tempo<0){
+clearInterval(timer);
+document.getElementById("timer").innerHTML="Oferta encerrada.";
+}
+},1000);
+}
+</script>
 
 </body>
 </html>
