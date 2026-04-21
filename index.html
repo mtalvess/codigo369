@@ -4,82 +4,128 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Código 369</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
+
 body{
+background:#000;
+color:#fff;
 font-family:'Poppins',sans-serif;
-background:linear-gradient(135deg,#0f0c29,#302b63,#24243e);
-color:white;
 text-align:center;
 }
 
-.container{max-width:900px;margin:auto;padding:40px 20px}
+.container{
+max-width:1000px;
+margin:auto;
+padding:50px 20px;
+}
 
 h1{
-font-size:40px;
-background:linear-gradient(90deg,#c77dff,#e0aaff);
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
+font-family:'Cinzel',serif;
+font-size:48px;
+color:#d4af37;
+letter-spacing:3px;
 margin-bottom:20px;
+text-shadow:0 0 15px rgba(212,175,55,0.6);
+}
+
+.subtitle{
+font-size:20px;
+margin-bottom:40px;
+opacity:.8;
 }
 
 .roleta-container{
 margin:40px auto;
 position:relative;
-width:300px;
-height:300px;
+width:320px;
+height:320px;
 }
 
 .roleta{
 width:100%;
 height:100%;
 border-radius:50%;
-border:8px solid #fff;
+border:10px solid #d4af37;
 background:conic-gradient(
-#9d4edd 0deg 90deg,
-#c77dff 90deg 180deg,
-#7b2cbf 180deg 270deg,
-#5a189a 270deg 360deg
+#111 0deg 90deg,
+#d4af37 90deg 180deg,
+#111 180deg 270deg,
+#d4af37 270deg 360deg
 );
-transition:transform 4s ease-out;
+transition:transform 4s cubic-bezier(.17,.67,.83,.67);
+box-shadow:0 0 40px rgba(212,175,55,.4);
 }
 
 .ponteiro{
 position:absolute;
-top:-15px;
+top:-18px;
 left:50%;
 transform:translateX(-50%);
 width:0;
 height:0;
-border-left:15px solid transparent;
-border-right:15px solid transparent;
-border-bottom:30px solid #fff;
+border-left:18px solid transparent;
+border-right:18px solid transparent;
+border-bottom:35px solid #d4af37;
 }
 
 .btn{
 display:inline-block;
-margin-top:25px;
-padding:15px 35px;
-background:linear-gradient(90deg,#9d4edd,#c77dff);
-border-radius:50px;
-color:white;
-font-weight:600;
-text-decoration:none;
-cursor:pointer;
+margin-top:30px;
+padding:18px 45px;
+background:linear-gradient(90deg,#b8860b,#ffd700);
+color:#000;
+font-weight:700;
 border:none;
+border-radius:50px;
+cursor:pointer;
+font-size:16px;
+transition:.3s;
 }
 
-.btn:hover{transform:scale(1.05)}
+.btn:hover{
+transform:scale(1.08);
+box-shadow:0 0 25px rgba(255,215,0,.7);
+}
 
-#resultado{margin-top:20px;font-size:18px;font-weight:600}
+#resultado{
+margin-top:25px;
+font-size:22px;
+font-weight:600;
+color:#ffd700;
+}
 
-#oferta{display:none;margin-top:30px}
+#oferta{
+display:none;
+margin-top:40px;
+}
 
-.countdown{margin-top:10px;color:#ffb3ff;font-weight:600}
+.price-old{
+text-decoration:line-through;
+opacity:.5;
+}
 
-footer{margin-top:50px;font-size:14px;opacity:.6}
+.price-new{
+font-size:32px;
+color:#ffd700;
+font-weight:700;
+margin:10px 0;
+}
+
+.countdown{
+margin-top:15px;
+color:#ffd700;
+font-weight:600;
+}
+
+footer{
+margin-top:60px;
+font-size:14px;
+opacity:.5;
+}
 </style>
 </head>
 
@@ -87,25 +133,30 @@ footer{margin-top:50px;font-size:14px;opacity:.6}
 
 <div class="container">
 
-<h1>🌌 CÓDIGO 369</h1>
-<p>Gire a roleta e desbloqueie sua oferta especial.</p>
+<h1>CÓDIGO 369</h1>
+<p class="subtitle">
+Gire a roleta e desbloqueie sua condição exclusiva.
+</p>
 
 <div class="roleta-container">
 <div class="ponteiro"></div>
 <div class="roleta" id="roleta"></div>
 </div>
 
-<button class="btn" onclick="girar()">Girar Roleta</button>
+<button class="btn" onclick="girar()">GIRAR ROLETA</button>
 
 <div id="resultado"></div>
 
 <div id="oferta">
-<h2>🔥 Oferta Especial Liberada</h2>
-<p style="text-decoration:line-through;opacity:.6">De R$67</p>
-<p style="font-size:28px;color:#c77dff;font-weight:700">Por apenas R$19,90</p>
+<h2 style="font-family:'Cinzel',serif;color:#d4af37;margin-top:20px;">
+🔥 15% OFF LIBERADO
+</h2>
 
-<a href="COLE_AQUI_SEU_LINK_DA_KIWIFY" target="_blank" class="btn">
-Comprar Agora
+<p class="price-old">De R$67,00</p>
+<p class="price-new">Por R$56,95</p>
+
+<a href="COLE_AQUI_SEU_LINK_DA_KIWIFY" target="_blank">
+<button class="btn">QUERO GARANTIR AGORA</button>
 </a>
 
 <div class="countdown" id="timer"></div>
@@ -128,18 +179,11 @@ let roleta=document.getElementById("roleta");
 let resultado=document.getElementById("resultado");
 let oferta=document.getElementById("oferta");
 
-let angulo=Math.floor(Math.random()*360)+1440;
+let angulo=1440 + 45; 
 roleta.style.transform="rotate("+angulo+"deg)";
 
 setTimeout(()=>{
-let premios=[
-"Você ganhou 10% OFF!",
-"Você ganhou 25% OFF!",
-"🔥 Você ganhou 50% OFF!",
-"✨ Você desbloqueou 70% OFF por 10 minutos!"
-];
-let premio=premios[Math.floor(Math.random()*premios.length)];
-resultado.innerHTML=premio;
+resultado.innerHTML="✨ Você desbloqueou 15% OFF exclusivo!";
 oferta.style.display="block";
 iniciarTimer();
 },4000);
